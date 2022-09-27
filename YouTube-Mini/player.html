@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe{
+            width: 720px;
+            height: 540px;
+        }
+    </style>
+</head>
+<body>
+    <div id="player"></div>
+</body>
+</html>
+
+<script>
+
+let video=JSON.parse(localStorage.getItem("vid"));
+
+console.log(video);
+
+let play= document.getElementById("player");
+
+
+    let iframe = document.createElement("iframe");
+    console.log(video.videoId)
+    iframe.src=`https://www.youtube.com/embed/${video.videoId}?autoplay=1&controls=1&loop=1&mute=1`;
+    iframe.allowFullscreen=1;
+
+    // https://www.youtube.com/embed/${vId.videoId}?autoplay=1
+
+    // console.log(iframe.src)
+
+play.append(iframe);
+
+</script>
